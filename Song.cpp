@@ -56,4 +56,51 @@ void Song::setSize(int _size)
    if (_size > 0) size = _size;
 }
 
+bool Song::operator ==(Song const &rhs)
+{
+   if (title != rhs.title) return false;
+   if (artist != rhs.artist) return false;
+   if (size != rhs.size) return false;
+   else return true;
+}
+
+bool Song::operator <(Song const &rhs)
+{
+   // First compare the artists:
+   if (artist < rhs.artist) return true;
+   else if (artist > rhs.artist) return false;
+
+   // Here, the two artists must be the same.
+   // Now compare the two titles:
+   if (title < rhs.title) return true;
+   else if (title > rhs.title) return false;
+   
+   // Both the artists and the titles are the same.
+   // Now compare the two sizes:
+   if (size < rhs.size) return true;
+   else if (size > rhs.size) return false;
+
+   // Both songs are equal.  In this case, return false.
+   return false;
+}
+
+bool Song::operator >(Song const &rhs)
+{
+   // First compare the artists:
+   if (artist > rhs.artist) return true;
+   else if (artist < rhs.artist) return false;
+
+   // Here, the two artists must be the same.
+   // Now compare the two titles:
+   if (title > rhs.title) return true;
+   else if (title < rhs.title) return false;
+   
+   // Both the artists and the titles are the same.
+   // Now compare the two sizes:
+   if (size > rhs.size) return true;
+   else if (size < rhs.size) return false;
+
+   // Both songs are equal.  In this case, return false.
+   return false;
+}
 

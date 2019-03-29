@@ -45,8 +45,9 @@ int main(int argc, char *argv[])
     cout << "add result = " << result << endl;
     
     t.showSongList();
+
+    cout << "s5 < s4: " << (s5 < s4) << endl;
     
-/*
     result = t.removeSong(s2);
     cout << "delete result = " << result << endl;
   
@@ -73,5 +74,4 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << "memory = " << t.getRemainingMemory() << endl;
     
-*/
 }

@@ -47,7 +47,36 @@ int UtPod::addSong(Song const &s)
 
 int UtPod::removeSong(Song const &s)
 {
-   return 0;
+   SongNode *nextNode = songs;
+   SongNode *prevNode = NULL;
+
+   // Traverse the linked list
+   while (nextNode != NULL) {
+
+      // If the song is found...
+      if (nextNode->s == s) {
+
+         // Remove the node from the list
+         // Case 1: This is the first node in the list
+         if (prevNode == NULL) {
+            songs = nextNode->next;
+            delete nextNode;
+         }
+         // Case 2: This is any other node in the list (prevNode != NULL)
+         else {
+            prevNode->next = nextNode->next;
+            delete nextNode;
+         }
+         
+         // Update available memory
+         podMemRem += s.getSize();
+         return SUCCESS;
+      }
+
+      prevNode = nextNode;
+      nextNode = nextNode->next;
+   }
+   return NOT_FOUND;
 }
 
 void UtPod::shuffle()

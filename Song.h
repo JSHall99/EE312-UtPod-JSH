@@ -43,6 +43,12 @@ class Song
 
       // _size must be a positive integer.  Otherwise, do nothing.
       void setSize(int _size);
+
+      // Overload comparison operators.  For < and > use artist, then
+      // title, then size.
+      bool operator ==(Song const &rhs);
+      bool operator <(Song const &rhs);
+      bool operator >(Song const &rhs);
 };
 
 #endif
