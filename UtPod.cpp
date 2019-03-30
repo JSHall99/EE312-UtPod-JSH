@@ -122,6 +122,8 @@ void UtPod::shuffle()
       randArray[minIndex] = temp;
    }
 
+   delete[] randArray;
+
    return;
 }
 
