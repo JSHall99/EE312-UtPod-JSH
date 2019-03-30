@@ -31,6 +31,12 @@ int main(int argc, char *argv[])
     cout << "result = " << result << endl;
     
     t.showSongList();
+
+/*
+    cout << "CLEAR MEMORY" << endl;
+    t.clearMemory();
+    t.showSongList();
+*/
        
     Song s3("Beatles", "Hey Jude3", 6);
     result = t.addSong(s3);
@@ -44,6 +50,14 @@ int main(int argc, char *argv[])
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
     
+    t.showSongList();
+
+    cout << "SORT LIST" << endl;
+    t.sortSongList();
+    t.showSongList();
+
+    cout << "RANDOMIZE LIST" << endl;
+    t.shuffle();
     t.showSongList();
 
     cout << "s5 < s4: " << (s5 < s4) << endl;

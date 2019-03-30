@@ -30,7 +30,9 @@ class UtPod
       SongNode *songs;  //the head pointer
       
       int podMemSize;  //the total amount of memory available on the UtPod
-      int podMemRem;   // The amount of memory remaining on the UtPod
+
+      // Swap the contents of s1 and s2
+      void swap(Song &s1, Song &s2);
    
    public:
       //Default constructor
@@ -142,9 +144,10 @@ class UtPod
          output parms -
       */
 
-      int getRemainingMemory() {
-         return podMemRem;
-      }
+      int getRemainingMemory();
+
+      // Returns the number of songs currently stored in the UtPod.
+      int getNumSongs();
 
 
       ~UtPod();
